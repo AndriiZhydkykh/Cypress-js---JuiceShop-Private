@@ -6,4 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
+  env: {
+    webUrl: "https://test.euronatur.org",
+  },
 });

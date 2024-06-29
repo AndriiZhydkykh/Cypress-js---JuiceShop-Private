@@ -1,14 +1,20 @@
-import { expect } from "@playwright/test";
-import { AppPage } from "../abstractClasses";
-import { Header } from "../component/header.component";
-import { step } from "../../misc/reporters/step";
+import Page from './page';
 
-export class LoginPage extends AppPage {
-     pagePath = '/shop';
-     header = new Header(this.page)
-     productList ='.shop .product-list'
+class LoginPage extends Page {
 
-     openProductDetailsByName(name: string) {
-       
+    get emailField() { return cy.get('#email') }
+    get passwordField() { return cy.get('#password'); }
+    get submitBtn() { return cy.get('form button[type="submit"]'); }
+   
+    open() {
+        super.open('login');
+    }
+    setEmailField(text){
+        super.type(this.emailField,text)
+    }
+    submit() {
+        super.click(this.submitBtn)
     }
 }
+
+export default new LoginPage();
