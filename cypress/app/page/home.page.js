@@ -13,6 +13,7 @@ export class HomePage extends PageHolder {
 
     open() {
         super.open('/');
+        this.header.expectLoaded()
     }
 }
 
