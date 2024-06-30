@@ -2,8 +2,18 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
+    viewportWidth: 1920,
+    viewportHeight: 1080,
+    defaultCommandTimeout:8000,
+    pageLoadTimeout: 500000,
+    chromeWebSecurity: false,
+    experimentalMemoryManagement:true,
+    video:false,
+    redirectionLimit: 50,
+    downloadsFolder:'cypress/downloads',
+    
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+     
     },
   },
   env: {

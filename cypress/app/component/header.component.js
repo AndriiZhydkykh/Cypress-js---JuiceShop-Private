@@ -38,6 +38,9 @@ export class Header{
     }
     clickLoginButton(){
         this.loginButton.click()
+    }   
+    getLoginButton(){
+        return this.loginButton
     }
     expectLoaded(){
        this.getLogoButton().should('be.visible')  
