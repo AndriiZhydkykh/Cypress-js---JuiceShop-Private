@@ -6,9 +6,9 @@ describe('Main page', () => {
     app.homePage.open()
     app.modalWindowHelper.closeAllModals()
   })
-
+  
   // TODO: add expectation
-  it('ID-1 - Login via existing user, () => {
+  it('ID-1 - Login via existing user', () => {
     app.homePage.header.clickAccountButton()
     app.homePage.header.clickLoginButton()
     app.homePage.header.getLoginButton().should('not.exist')
