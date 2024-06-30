@@ -7,6 +7,6 @@ module.exports = defineConfig({
     },
   },
   env: {
-    webUrl: "https://test.euronatur.org",
+    webUrl: "https://rough-casey-testingtalk-13d498f2.koyeb.app/#",
   },
 });
