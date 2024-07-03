@@ -3,7 +3,7 @@ export class AuthController  {
     createNewUser(data) {
         return cy.request({
           method: 'POST',
-          url: 'https://api-stg.preferredmd.com/api/v1/surgeon/auth/login/',
+          url: 'https://rough-casey-testingtalk-13d498f2.koyeb.app/api/Users/',
           body: data
         })
       }
