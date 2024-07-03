@@ -1,5 +1,4 @@
 import app from "../app/index"
-import { randomEmail } from "../app/helper/data.helper";
 
 describe('Main page', () => {
   before(() => {
