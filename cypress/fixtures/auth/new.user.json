@@ -1,0 +1,10 @@
+{
+    "email": "{{TODAYS_DATE}}",
+    "password": "superSecretPassword!!!",
+    "passwordRepeat": "superSecretPassword",
+    "securityAnswer": "Nadia",
+    "securityQuestion": {
+      "id": 5,
+      "question": "Maternal grandmother's first name?"
+    }
+  }

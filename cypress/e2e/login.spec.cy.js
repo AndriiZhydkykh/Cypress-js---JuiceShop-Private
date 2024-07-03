@@ -1,13 +1,14 @@
 import app from "../app/index"
+import { randomEmail } from "../app/helper/data.helper";
 
 describe('Main page', () => {
-  
-  beforeEach(() => {
-    app.homePage.open()
-    app.modalWindowHelper.closeAllModals()
+  before(() => {
+    app.helper.manageUsers.createUser()
   })
-  
-  // TODO: add expectation
+  beforeEach(() => {
+
+    app.homePage.open()
+  })
   it('ID-1 - Login via existing user', () => {
     app.homePage.header.clickAccountButton()
     app.homePage.header.clickLoginButton()
@@ -16,5 +17,5 @@ describe('Main page', () => {
     app.loginPage.setPasswordField('123456789')
     app.loginPage.clickSubmitBtn()
   })
- 
 })
+
