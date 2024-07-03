@@ -1,8 +1,11 @@
+import { Api } from "./api/api";
+import { Helper } from './helper/helper'
 import { PageHolder } from "./page.holder";
 import { HomePage } from "./page/home.page";
 import { LoginPage } from "./page/login.page";
-import { Api } from "./api/api";
-import { Helper } from './helper/helper'
+import { UserProfilePage } from "./page/user-cabinet/user.profile";
+
+
 
 export default new class Application extends PageHolder {
     constructor() {
@@ -12,6 +15,7 @@ export default new class Application extends PageHolder {
 
         this.homePage = new HomePage()
         this.loginPage = new LoginPage()
+        this.userProfilePage = new UserProfilePage()
     }
 
 }
