@@ -1,5 +1,5 @@
 {
-    "email": "{{TODAYS_DATE}}",
+    "email": "",
     "password": "superSecretPassword!!!",
     "passwordRepeat": "superSecretPassword",
     "securityAnswer": "Nadia",

@@ -6,6 +6,7 @@ export class Header{
     get languageButton() { return cy.get('app-navbar button[aria-label="Language selection menu"]'); }
     get languageButtonText() { return cy.get('app-navbar button[aria-label="Language selection menu"] span'); }
     get loginButton() {return cy.get('button#navbarLoginButton')}
+    get basket() {return cy.get('app-navbar button[aria-label="Show the shopping cart"]')}
 
 
     getLogoButton(){
@@ -41,6 +42,9 @@ export class Header{
     }   
     getLoginButton(){
         return this.loginButton
+    }
+    getBasket(){
+        return this.basket
     }
     expectLoaded(){
        this.getLogoButton().should('be.visible')  
