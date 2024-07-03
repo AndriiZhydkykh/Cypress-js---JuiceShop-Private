@@ -1,8 +1,8 @@
-import { ManageUsers } from "./manage.user.helper"
+import { Users } from "./user.helper"
 
 export class Helper{
     constructor(){
         super()
-        this.manageUsers = new ManageUsers()
+        this.users = new Users()
     }
 }
