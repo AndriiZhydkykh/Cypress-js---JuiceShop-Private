@@ -17,7 +17,7 @@ export class LoginPage extends PageHolder {
 
     
     open() {
-        super.open('/login');
+        super.open('#/login');
     }
     setEmailField(text) {
         this.emailField.type(text)

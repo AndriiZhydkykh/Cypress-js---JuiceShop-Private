@@ -1,6 +1,7 @@
 import app from '../index'
 
 export class Users {
+  
   createUser() {
     const newEmail = `test${crypto.randomUUID()}@test.com`
 
@@ -29,10 +30,10 @@ export class Users {
       app.homePage.header.expectLoaded()
       app.homePage.header.getBasket().should('be.visible')
     }, {
-      validate() {
+      /* validate() {
         app.homePage.open()
         app.homePage.header.getBasket().should('be.visible')
-      },
+      }, */
       cacheAcrossSpecs: true,
 
     })

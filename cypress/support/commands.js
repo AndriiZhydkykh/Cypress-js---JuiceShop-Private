@@ -23,23 +23,3 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import app from "../app";
-
-
-Cypress.Commands.add('signInAsNewUser', (email, password) => {
-  cy.session([email, password], () => {
-    app.loginPage.open()
-    app.loginPage.setEmailField(email)
-    app.loginPage.setPasswordField(password)
-    app.loginPage.clickSubmitBtn()
-    app.homePage.header.expectLoaded()
-    app.homePage.header.getBasket().should('be.visible')
-  }, {
-    validate() {
-      app.homePage.open()
-      app.homePage.header.getBasket().should('be.visible')
-    },
-    cacheAcrossSpecs: true,
-
-  })
-})
