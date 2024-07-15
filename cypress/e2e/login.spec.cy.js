@@ -1,24 +1,25 @@
-import app from "../app/index"
+import { homePage, loginPage } from '../app/page/index'
+import { usersHelper} from '../app/helper/index'
 
 describe('Main page', () => {
   before(() => {
-   app.helper.users.createUser()
+    usersHelper.createUser()
   })
   beforeEach(() => {
-    app.homePage.open()
-    app.homePage.welcomeBanner.clickCloseWelcomeBannerButton()
-    app.homePage.cookiesWindow.clickDismissCookiesButton()
+    homePage.open()
+    homePage.welcomeBanner.clickCloseWelcomeBannerButton()
+    homePage.cookiesWindow.clickDismissCookiesButton()
   })
   it('ID-1 - Login via existing user', () => {
     const userData = Cypress.env('newUserData');
-    app.homePage.header.clickAccountButton()
-    app.homePage.header.clickLoginButton()
-    app.homePage.header.getLoginButton().should('not.exist')
-    app.loginPage.setEmailField(userData.email)
-    app.loginPage.setPasswordField(userData.password)
-    app.loginPage.clickSubmitBtn()
-    app.homePage.header.expectLoaded()
-    app.homePage.header.getBasket().should('be.visible')
+    homePage.header.clickAccountButton()
+    homePage.header.clickLoginButton()
+    homePage.header.getLoginButton().should('not.exist')
+    loginPage.setEmailField(userData.email)
+    loginPage.setPasswordField(userData.password)
+    loginPage.clickSubmitBtn()
+    loginPage.header.expectLoaded()
+    loginPage.header.getBasket().should('be.visible')
   })
 })
 

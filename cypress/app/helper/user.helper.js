@@ -1,6 +1,6 @@
-import app from '../index'
-
-export class Users {
+import { authController } from '../api/index'
+import { homePage, loginPage } from '../page/index'
+class UsersHelper {
   
   createUser() {
     const newEmail = `test${crypto.randomUUID()}@test.com`
@@ -11,7 +11,7 @@ export class Users {
         email: newEmail
       };
 
-      app.api.auth.createNewUser(userData).then((response) => {
+      authController.createNewUser(userData).then((response) => {
         expect(response.status).to.eq(201);
         Cypress.env('newUserData', userData);
       });
@@ -21,14 +21,14 @@ export class Users {
 
  signInAsNewUser(email, password) {
     cy.session([email, password], () => {
-      app.loginPage.open()
-      app.loginPage.welcomeBanner.clickCloseWelcomeBannerButton()
-      app.loginPage.cookiesWindow.clickDismissCookiesButton()
-      app.loginPage.setEmailField(email)
-      app.loginPage.setPasswordField(password)
-      app.loginPage.clickSubmitBtn()
-      app.homePage.header.expectLoaded()
-      app.homePage.header.getBasket().should('be.visible')
+      loginPage.open()
+      loginPage.welcomeBanner.clickCloseWelcomeBannerButton()
+      loginPage.cookiesWindow.clickDismissCookiesButton()
+      loginPage.setEmailField(email)
+      loginPage.setPasswordField(password)
+      loginPage.clickSubmitBtn()
+      homePage.header.expectLoaded()
+      homePage.header.getBasket().should('be.visible')
     }, {
       /* validate() {
         app.homePage.open()
@@ -40,3 +40,4 @@ export class Users {
   }
 
 }
+export default new UsersHelper

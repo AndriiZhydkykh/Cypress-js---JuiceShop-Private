@@ -1,4 +1,4 @@
-export class CookiesWindow{
+class CookiesWindow{
 
  get dismissCookiesButton() { return cy.get('a[aria-label="dismiss cookie message"]'); }
 
@@ -7,4 +7,5 @@ export class CookiesWindow{
  }
 
 }
+export default new CookiesWindow
 

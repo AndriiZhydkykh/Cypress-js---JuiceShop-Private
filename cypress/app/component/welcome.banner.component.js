@@ -1,4 +1,4 @@
-export class WelcomeBanner{
+class WelcomeBanner{
 
  get closeWelcomeBannerButton() { return cy.get('button[aria-label="Close Welcome Banner"]'); }
 
@@ -8,5 +8,5 @@ export class WelcomeBanner{
 
 }
 
-
+export default new WelcomeBanner
 

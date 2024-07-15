@@ -1,6 +1,6 @@
-import { PageHolder}  from "../../page.holder";
+import { PageHolder }  from "../../page.holder";
 
-export class UserProfilePage extends PageHolder {
+class UserProfilePage extends PageHolder {
     get emailField() { return cy.get('input#email') }
 
 
@@ -12,5 +12,5 @@ export class UserProfilePage extends PageHolder {
     }
 }
 
-
+export default new UserProfilePage
 

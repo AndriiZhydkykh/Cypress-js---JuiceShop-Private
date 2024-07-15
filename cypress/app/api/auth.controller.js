@@ -1,4 +1,4 @@
-export class AuthController  {
+class AuthController  {
 
     createNewUser(data) {
         return cy.request({
@@ -9,3 +9,5 @@ export class AuthController  {
       }
       
 }
+
+export default new AuthController

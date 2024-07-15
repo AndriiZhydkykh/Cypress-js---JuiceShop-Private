@@ -1,4 +1,4 @@
-export class Header{
+class Header{
 
     get logoButton() { return cy.get('app-navbar button[aria-label="Back to homepage"]'); }
     get searchButton() { return cy.get('app-navbar #searchQuery'); }
@@ -55,4 +55,4 @@ export class Header{
   
 }
 
-
+export default new Header

@@ -1,14 +1,12 @@
-import { PageHolder}  from "../page.holder";
-import { Header } from "../component/header.component";
-import { WelcomeBanner } from "../component/welcome.banner.component";
-import { CookiesWindow } from "../component/cookies.modal.component";
+import { PageHolder }  from "../page.holder";
+import { header, welcomeBanner, cookiesWindow } from "../../app/component";
 
-export class HomePage extends PageHolder {
+class HomePage extends PageHolder {
     constructor() {
         super()
-        this.header = new Header();
-        this.welcomeBanner = new WelcomeBanner();
-        this.cookiesWindow = new CookiesWindow();
+        this.header = header;
+        this.welcomeBanner = welcomeBanner;
+        this.cookiesWindow = cookiesWindow;
     }
 
     open() {
@@ -17,5 +15,5 @@ export class HomePage extends PageHolder {
     }
 }
 
-
+export default new HomePage
 

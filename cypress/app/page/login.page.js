@@ -1,14 +1,13 @@
 import { PageHolder}  from "../page.holder";
-import { Header } from "../component/header.component";
-import { WelcomeBanner } from "../component/welcome.banner.component";
-import { CookiesWindow } from "../component/cookies.modal.component";
+import { header, welcomeBanner, cookiesWindow } from "../../app/component";
 
-export class LoginPage extends PageHolder {
+
+class LoginPage extends PageHolder {
     constructor() {
         super()
-        this.header = new Header();
-        this.welcomeBanner = new WelcomeBanner();
-        this.cookiesWindow = new CookiesWindow();
+        this.header = header;
+        this.welcomeBanner = welcomeBanner;
+        this.cookiesWindow = cookiesWindow;
     }
     
     get emailField() { return cy.get('input#email') }
@@ -34,4 +33,4 @@ export class LoginPage extends PageHolder {
 }
 
 
-
+export default new LoginPage

@@ -1,20 +1,21 @@
-import app from "../../app/index"
+import { userProfilePage } from '../../app/page/index'
+import { usersHelper } from '../../app/helper/index'
 
 describe('User profile page', () => {
 
  before(() => {
-  app.helper.users.createUser()
+    usersHelper.createUser()
  })
 
  beforeEach(() => {
   const userData = Cypress.env('newUserData')
-  app.helper.users.signInAsNewUser(userData.email, userData.password)
-  app.userProfilePage.open()
+  usersHelper.signInAsNewUser(userData.email, userData.password)
+  userProfilePage.open()
 
  })
  it('ID-1 - Visit user profile page', () => {
   const userData = Cypress.env('newUserData')
-  app.userProfilePage.getEmailField().should('have.value', userData.email)
+  userProfilePage.getEmailField().should('have.value', userData.email)
  })
 
 
