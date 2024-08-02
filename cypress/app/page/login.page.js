@@ -1,7 +1,5 @@
-import { PageHolder}  from "../page.holder";
+import { PageHolder }  from "../page.holder";
 import { header, welcomeBanner, cookiesWindow } from "../../app/component";
-
-
 class LoginPage extends PageHolder {
     constructor() {
         super()
@@ -26,10 +24,9 @@ class LoginPage extends PageHolder {
     }
     clickSubmitBtn() {
         this.submitBtn.click()
-        
     }
-    
-
+ 
+   
 }
 
 

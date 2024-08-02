@@ -17,3 +17,6 @@ class HomePage extends PageHolder {
 
 export default new HomePage
 
+
+
+

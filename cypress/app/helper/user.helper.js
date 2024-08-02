@@ -30,14 +30,14 @@ class UsersHelper {
       homePage.header.expectLoaded()
       homePage.header.getBasket().should('be.visible')
     }, {
-      /* validate() {
+      validate() {
         app.homePage.open()
         app.homePage.header.getBasket().should('be.visible')
-      }, */
+      }, 
       cacheAcrossSpecs: true,
-
     })
   }
+  
 
 }
 export default new UsersHelper
