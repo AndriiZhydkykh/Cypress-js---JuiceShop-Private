@@ -1,8 +1,6 @@
 import { homePage, loginPage } from '../app/page/index'
 import { usersHelper, userData } from '../app/helper/index'
 
-
-
 describe('Main page', () => {
   before(() => {
     usersHelper.createUser()
