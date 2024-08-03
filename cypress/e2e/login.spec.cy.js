@@ -1,4 +1,5 @@
 import { homePage, loginPage } from '../app/page/index'
+import { usersHelper, userData } from '../app/helper/index'
 
 
 
@@ -12,7 +13,6 @@ describe('Main page', () => {
     homePage.cookiesWindow.clickDismissCookiesButton()
   })
   it('ID-1 - Login via existing user', () => {
-    const userData = Cypress.env('newUserData');
     homePage.header.clickAccountButton()
     homePage.header.clickLoginButton()
     homePage.header.getLoginButton().should('not.exist')
