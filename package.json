@@ -1,5 +1,16 @@
 {
   "devDependencies": {
     "cypress": "^13.12.0"
+  },
+  "dependencies": {
+    "@mmisty/cypress-allure-adapter": "^2.6.2",
+    "allure-commandline": "^2.29.0",
+    "cross-env": "^7.0.3"
+  },
+  "scripts": {
+    "test": "cross-env CYPRESS_NO_COMMAND_LOG=1 npx cypress run --browser chrome",
+    "ui:test": "npx cypress open",
+    "allure-generate": "allure generate allure-results -o allure-report --clean",
+    "allure-open": "allure open allure-report"
   }
 }

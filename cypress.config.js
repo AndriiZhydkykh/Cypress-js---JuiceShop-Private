@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const { configureAllureAdapterPlugins } = require('@mmisty/cypress-allure-adapter/plugins')
 
 module.exports = defineConfig({
   e2e: {
@@ -13,10 +14,14 @@ module.exports = defineConfig({
     downloadsFolder:'cypress/downloads',
     
     setupNodeEvents(on, config) {
-     
+     configureAllureAdapterPlugins(on, config)
+     return config
     },
   },
   env: {
-    webUrl: "https://rough-casey-testingtalk-13d498f2.koyeb.app",
+    allure: true,
+    allureLogCyCommands: true,
+    allureReuseAfterSpec: true,
+    webUrl: "https://rough-casey-testingtalk-13d498f2.koyeb.app"
   },
 });
